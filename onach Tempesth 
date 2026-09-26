@@ -1,1 +1,484 @@
-eu
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ONACH SMITH | Tecnologia & Criatividade</title>
+
+<meta name="description" content="ONACH SMITH — Tecnologia, programação, criatividade e segurança informática.">
+<meta name="author" content="ONACH SMITH">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Fundo */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(rgba(255,0,0,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,0,0,.04) 1px,transparent 1px);
+    background-size:40px 40px;
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* Cabeçalho */
+header{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px 20px;
+    background:
+        radial-gradient(circle at center,rgba(180,0,0,.25),transparent 45%),
+        #050505;
+}
+
+.container{
+    width:100%;
+    max-width:1000px;
+    margin:auto;
+}
+
+.logo{
+    width:130px;
+    height:130px;
+    border:3px solid #ff2020;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 25px;
+    font-size:65px;
+    font-weight:bold;
+    color:#ff2020;
+    box-shadow:
+        0 0 20px #ff2020,
+        inset 0 0 20px rgba(255,0,0,.3);
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+        box-shadow:0 0 20px #ff2020;
+    }
+    50%{
+        transform:scale(1.06);
+        box-shadow:0 0 45px #ff2020;
+    }
+}
+
+h1{
+    font-size:clamp(40px,10vw,80px);
+    letter-spacing:5px;
+}
+
+.red{
+    color:#ff2020;
+}
+
+.subtitle{
+    margin-top:15px;
+    font-size:20px;
+    color:#ccc;
+}
+
+.typing{
+    margin:25px 0;
+    color:#ff3030;
+    font-size:18px;
+}
+
+/* Botões */
+.buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
+}
+
+.btn{
+    text-decoration:none;
+    color:white;
+    border:1px solid #ff2020;
+    padding:13px 22px;
+    border-radius:30px;
+    transition:.3s;
+    background:rgba(255,0,0,.08);
+}
+
+.btn:hover{
+    background:#ff2020;
+    box-shadow:0 0 25px #ff2020;
+    transform:translateY(-3px);
+}
+
+/* Seções */
+section{
+    padding:80px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:45px;
+}
+
+.section-title span{
+    color:#ff2020;
+}
+
+/* Sobre */
+.about{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    color:#ccc;
+    line-height:1.8;
+    font-size:18px;
+}
+
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.card{
+    padding:30px 20px;
+    background:linear-gradient(145deg,#111,#080808);
+    border:1px solid #222;
+    border-radius:15px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#ff2020;
+    box-shadow:0 0 25px rgba(255,0,0,.25);
+}
+
+.card .icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:12px;
+    color:#ff3030;
+}
+
+.card p{
+    color:#aaa;
+    line-height:1.6;
+}
+
+/* Projeto */
+.project{
+    max-width:850px;
+    margin:auto;
+    border:1px solid #222;
+    border-radius:18px;
+    padding:35px;
+    background:#0c0c0c;
+    text-align:center;
+}
+
+.project h3{
+    color:#ff2020;
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.project p{
+    color:#bbb;
+    line-height:1.7;
+}
+
+/* Contato */
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    color:#aaa;
+    margin:10px;
+}
+
+/* Rodapé */
+footer{
+    text-align:center;
+    padding:30px 20px;
+    border-top:1px solid #222;
+    color:#777;
+}
+
+footer span{
+    color:#ff2020;
+}
+
+/* Animação de entrada */
+.fade{
+    opacity:0;
+    transform:translateY(25px);
+    animation:show 1s forwards;
+}
+
+@keyframes show{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container fade">
+
+    <div class="logo">O</div>
+
+    <h1>ONACH <span class="red">SMITH</span></h1>
+
+    <p class="subtitle">
+        Tecnologia • Programação • Criatividade
+    </p>
+
+    <div class="typing" id="typing"></div>
+
+    <div class="buttons">
+        <a class="btn" href="#sobre">Sobre mim</a>
+        <a class="btn" href="#habilidades">Habilidades</a>
+        <a class="btn" href="#projetos">Projetos</a>
+        <a class="btn" href="#contacto">Contacto</a>
+    </div>
+
+</div>
+</header>
+
+<section id="sobre">
+<div class="container">
+
+    <h2 class="section-title">Sobre <span>mim</span></h2>
+
+    <div class="about">
+        <p>
+            Olá, eu sou <strong>ONACH SMITH</strong>.
+        </p>
+
+        <br>
+
+        <p>
+            Sou apaixonado por tecnologia, programação,
+            informática e criação digital. Estou sempre
+            aprendendo novas ferramentas e desenvolvendo
+            novos projetos.
+        </p>
+
+        <br>
+
+        <p>
+            Meu objetivo é transformar ideias em projetos
+            digitais e continuar evoluindo no mundo da tecnologia.
+        </p>
+    </div>
+
+</div>
+</section>
+
+<section id="habilidades">
+<div class="container">
+
+    <h2 class="section-title">Minhas <span>habilidades</span></h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Programação</h3>
+            <p>
+                Desenvolvimento de páginas e projetos
+                utilizando tecnologias web.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Web</h3>
+            <p>
+                Criação de sites modernos,
+                responsivos e interativos.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔐</div>
+            <h3>Segurança</h3>
+            <p>
+                Estudo de segurança informática,
+                proteção de sistemas e boas práticas.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Criatividade</h3>
+            <p>
+                Criação de conceitos visuais,
+                projetos digitais e ideias originais.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<section id="projetos">
+<div class="container">
+
+    <h2 class="section-title">Meus <span>projetos</span></h2>
+
+    <div class="project">
+
+        <h3>ONACH PROJECT</h3>
+
+        <p>
+            Um universo digital criado por ONACH SMITH,
+            combinando tecnologia, criatividade, anime
+            e identidade visual.
+        </p>
+
+        <br>
+
+        <a class="btn" href="#contacto">
+            Conhecer mais
+        </a>
+
+    </div>
+
+</div>
+</section>
+
+<section id="contacto">
+<div class="container contact">
+
+    <h2 class="section-title">
+        Entre em <span>contacto</span>
+    </h2>
+
+    <p>📧 onachsmith@gmail.com</p>
+
+    <div class="buttons">
+
+        <a class="btn"
+           href="https://instagram.com/onach_itach"
+           target="_blank">
+           Instagram
+        </a>
+
+        <a class="btn"
+           href="https://www.tiktok.com/@onach_smith"
+           target="_blank">
+           TikTok
+        </a>
+
+        <a class="btn"
+           href="https://www.facebook.com/"
+           target="_blank">
+           Facebook
+        </a>
+
+    </div>
+
+</div>
+</section>
+
+<footer>
+    © 2026 <span>ONACH SMITH</span> —
+    Tecnologia & Criatividade
+</footer>
+
+<script>
+
+const texts = [
+    "Programador em evolução...",
+    "Especialista em segurança informática...",
+    "Criando ideias através da tecnologia...",
+    "Bem-vindo ao universo ONACH..."
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typingEffect(){
+
+    const element = document.getElementById("typing");
+    const current = texts[textIndex];
+
+    if(!deleting){
+        element.textContent =
+            current.substring(0,charIndex + 1);
+
+        charIndex++;
+
+        if(charIndex === current.length){
+            deleting = true;
+            setTimeout(typingEffect,1500);
+            return;
+        }
+
+    }else{
+
+        element.textContent =
+            current.substring(0,charIndex - 1);
+
+        charIndex--;
+
+        if(charIndex === 0){
+            deleting = false;
+            textIndex =
+                (textIndex + 1) % texts.length;
+        }
+    }
+
+    setTimeout(
+        typingEffect,
+        deleting ? 45 : 80
+    );
+}
+
+typingEffect();
+
+</script>
+
+</body>
+</html>
